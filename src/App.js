@@ -1,9 +1,10 @@
-
+import ProfileImage from "../src/assests/images/profile.jpg"
+import SmallerProfileImage from "../src/assests/images/small_profile.jpg"
 function App() {
   return (
     <div className="font-raleway bg-black text-white">
       <nav className="w-full fixed border-b bg-black z-50">
-        <div className="w-11/12 mx-auto py-5 flex justify-between items-center">
+        <div className="w-11/12 mx-auto py-4 flex justify-between items-center">
           <p className="font-bold">FA</p>
           <div className="hidden md:flex flex-col md:flex-row items-center gap-4">
             <ul className="flex flex-col md:flex-row items-center gap-4">
@@ -19,18 +20,22 @@ function App() {
       </nav>
       <section className="py-8 sm:py-10 md:py-12 border-b">
         <div className="w-11/12 min-h-screen mx-auto flex items-center items">
-          <div className="space-y-3 md:w-4/6">
-            <p className="text-base md:text-lg">
-              Hi there,
+          <p className="absolute text-6xl right-20 top-40">🚀</p>
+          {/* <p className="absolute text-3xl left-0 right-0 mx-auto w-fit bottom-10">⚡</p> */}
+          {/* <p className="absolute text-6xl right-20 top-40">💡</p> */}
+          <div className="space-y-3 md:w-4/6 relative">
+            {/* <p className="absolute text-6xl -left-4 z-10 -top-10">💡</p> */}
+            <p className="text-base md:text-lg z-20 relative">
+              Hi there 🤗,
             </p>
-            <h1 className="text-5xl md:text-6xl font-semibold">
-              I'm Feyisayo Amujoyegbe
+            <h1 className="text-3xl md:text-6xl font-bold">
+              I'm Feyisayo Amujoyegbe 
             </h1>
-            <h2 className="text-2xl md:text-3xl font-semibold">
-              A Frontend Web Developer
+            <h2 className="text-xl md:text-3xl font-bold">
+              A Frontend Web Developer💻
             </h2>
             <p className="text-base md:text-lg">
-              I specialize in creating responsive and user-friendly web solutions that make a high impact using <span className="font-bold">React</span>. I'm passionate about bringing ideas to life and solving 
+              I specialize in creating responsive and user-friendly web solutions that make a high impact using <span className="font-bold underline">React</span>. I'm passionate about bringing ideas to life and solving 
               problems through innovative design and development.
             </p>
             <p className="px-4 py-2.5 border rounded-full w-fit font-semibold text-base md:text-lg cursor-pointer">
@@ -41,7 +46,7 @@ function App() {
       </section>
       <section className="py-8 sm:py-10 md:py-12 border-b">
         <div className="w-11/12 mx-auto space-y-9">
-          <h3 className="text-2xl md:text-3xl font-semibold relative after:absolute after:w-10 after:h-1 after:bg-white after:-bottom-3 after:left-0">About Me</h3>
+          <h3 className="text-2xl md:text-3xl font-semibold relative after:absolute after:w-10 after:h-1 after:bg-white after:-bottom-3 after:left-0">About Me 🦜</h3>
           <div className="flex flex-col-reverse md:flex-row gap-10">
             <div className="space-y-3 w-fit">
               <p className="text-base md:text-lg">
@@ -62,15 +67,15 @@ function App() {
                 Overall, my journey in tech has been both rewarding and challenging, and I'm excited to continue growing and developing my skills in the years to come.
               </p>
             </div>
-            <div className="w-full md:w-[700px] border bg-black relative after:absolute after:-bottom-10 after:h-[350px] after:w-[350] after:bg-white after:-right-10">
-              
+            <div className="w-full xl:w-[700px] xl:h-full bg-black relative after:absolute after:-bottom-10 after:h-[350px] after:w-[350] after:bg-white after:-right-10">
+              <img src={ window.innerWidth < 1280 ? SmallerProfileImage : ProfileImage} alt="" className="w-full xl:w-[700px] xl:h-full object-cover " />
             </div>
           </div>
         </div>
       </section>
       <section className="py-8 sm:py-10 md:py-12 border-b">
         <div className="w-11/12 mx-auto space-y-9">
-          <h2 className="text-2xl md:text-3xl font-semibold relative after:absolute after:w-10 after:h-1 after:bg-white after:-bottom-3 after:left-0">Skills</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold relative after:absolute after:w-10 after:h-1 after:bg-white after:-bottom-3 after:left-0">Skills💪🏽</h2>
           <div className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:flex gap-4">
             <div className="px-4 py-2.5 border rounded-full w-fit flex items-center justify-between gap-4 group font-semibold text-base md:text-lg">
               <svg xmlns="http://www.w3.org/2000/svg" role="img" className="w-5 md:w-7 fill-white" viewBox="0 0 24 24"><title>HTML5</title><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg>
@@ -98,7 +103,7 @@ function App() {
       <section className="py-8 sm:py-10 md:py-12 border-b">
         <div className="w-11/12 mx-auto space-y-9">
           <h2 className="text-2xl md:text-3xl font-semibold relative after:absolute after:w-10 after:h-1 after:bg-white after:-bottom-3 after:left-0">
-            Projects
+            Projects🥇
           </h2>
           <p>
             <span className="text-base md:text-lg font-semibold">Freelance Work Experience - </span>
@@ -110,7 +115,7 @@ function App() {
                 <h3 className="text-xl font-semibold px-6">OAU CV Builder</h3>
                 <hr></hr>
                 <div className="flex gap-3 px-6 pt-1">
-                  <p className="bg-slate-500 text-sm py-2 px-3 rounded-md">ReactJs</p> 
+                  <p className="bg-slate-500 text-sm py-2 px-3 rounded-md">ReactJS</p> 
                   <p className="bg-slate-500 text-sm py-2 px-3 rounded-md">Talwind CSS</p>
                 </div>
                 <p className="px-5 ">
@@ -141,9 +146,8 @@ function App() {
                 <h3 className="text-xl font-semibold px-6">Eyekontact (Ongoing)</h3>
                 <hr></hr>
                 <div className="flex gap-3 px-6 pt-1">
-                  <p className="bg-slate-500 text-sm py-2 px-3 rounded-md">ReactJs</p> 
+                  <p className="bg-slate-500 text-sm py-2 px-3 rounded-md">ReactJS</p> 
                   <p className="bg-slate-500 text-sm py-2 px-3 rounded-md">Talwind CSS</p>
-                  <p className="bg-slate-500 text-sm py-2 px-3 rounded-md">Rechart</p> 
                   <p className="bg-slate-500 text-sm py-2 px-3 rounded-md">AOS</p>
                 </div>
                 <p className="px-5 ">
@@ -201,7 +205,7 @@ function App() {
                 <h3 className="text-xl font-semibold px-6">Hypestrike (Ongoing)</h3>
                 <hr></hr>
                 <div className="flex gap-3 px-6 pt-1">
-                  <p className="bg-slate-500 text-sm py-2 px-3 rounded-md">ReactJs</p> 
+                  <p className="bg-slate-500 text-sm py-2 px-3 rounded-md">ReactJS</p> 
                   <p className="bg-slate-500 text-sm py-2 px-3 rounded-md">Talwind CSS</p>
                 </div>
                 <p className="px-5 ">
@@ -241,7 +245,7 @@ function App() {
                 <h3 className="text-xl font-semibold px-6">Learning Management System</h3>
                 <hr></hr>
                 <div className="flex gap-3 px-6 pt-1">
-                  <p className="bg-slate-500 text-sm py-2 px-3 rounded-md">ReactJs</p> 
+                  <p className="bg-slate-500 text-sm py-2 px-3 rounded-md">ReactJS</p> 
                   <p className="bg-slate-500 text-sm py-2 px-3 rounded-md">Talwind CSS</p>
                 </div>
                 <p className="px-5 ">
@@ -300,9 +304,8 @@ function App() {
                 <h3 className="text-xl font-semibold px-6">76gems</h3>
                 <hr></hr>
                 <div className="flex gap-3 px-6 pt-1">
-                  <p className="bg-slate-500 text-sm py-2 px-3 rounded-md">React</p> 
+                  <p className="bg-slate-500 text-sm py-2 px-3 rounded-md">ReactJS</p> 
                   <p className="bg-slate-500 text-sm py-2 px-3 rounded-md">CSS</p>
-                  <p className="bg-slate-500 text-sm py-2 px-3 rounded-md">Rechart</p>
                 </div>
                 <p className="px-5 ">
                   A dynamic and responsive modern dashboard that provides users with real-time data and analytics in a visually engaging and user-friendly format.
@@ -330,19 +333,17 @@ function App() {
       </section>
       <section className="py-8 sm:py-10 md:py-12 border-b">
         <div className="w-11/12 mx-auto space-y-9">
-          <h3 className="text-2xl md:text-3xl font-semibold relative after:absolute after:w-10 after:h-1 after:bg-white after:-bottom-3 after:left-0">Contact Me</h3>
+          <h3 className="text-2xl md:text-3xl font-semibold relative after:absolute after:w-10 after:h-1 after:bg-white after:-bottom-3 after:left-0">Contact 📱</h3>
           <div className="text-base md:text-lg">
             <p>
               I'm currently available to get involved in new projects, so get in touch if you'd like to work together.
-            </p>
-            <p>
               Email me at <span className="font-bold">feyisayoamujoyegbe@gmail.com</span> and let's talk about your project!
             </p>
           </div>
         </div>
       </section>
       <footer className="py-4 space-y-4">
-        <p className="w-fit mx-auto text-base md:text-lg">© 2023 - Built and Designed by Feyisayo Amujoyegbe</p>
+        <p className="w-fit mx-auto text-base md:text-lg text-center">© 2023 - Built and Designed by Feyisayo Amujoyegbe</p>
         <div className="flex gap-4 justify-center items-center md:fixed md:bottom-0 md:right-6 md:flex-col">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" class="w-6 h-6 md:w-8 md:h-8 fill-[#878b95] hover:fill-white cursor-pointer"><g class="w-6 h-6 mr-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"/><path d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"/></g></svg>
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-8 md:h-8 fill-[#878b95] hover:fill-white cursor-pointer" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
