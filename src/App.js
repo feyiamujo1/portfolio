@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import Hamburger from 'hamburger-react'
 
 import SmallerProfileImage from "../src/assests/images/small_profile.jpg"
 
@@ -10,20 +11,28 @@ function App() {
   const skillsRef = useRef(null);
   const projectRef = useRef(null);
   const contactRef = useRef(null);
+  const navLinks = useRef(null);
+
+  const [openNav, setOpenNav] = useState(false);
 
   return (
     <div className="font-raleway bg-black text-white">
-      <nav className="w-full fixed border-b bg-black z-50">
-        <div className="w-11/12 mx-auto py-4 flex justify-between items-center">
-          <p className="font-bold text-light_blue cursor-pointer" onClick={() => homeRef.current.scrollIntoView({ behavior: 'smooth'})}>FA</p>
-          <div className="hidden md:flex flex-col md:flex-row items-center gap-4">
-            <ul className="flex flex-col md:flex-row items-center gap-4">
-              <li className="cursor-pointer font-medium hover:text-yellow" onClick={() => homeRef.current.scrollIntoView({ behavior: 'smooth'})}>Home</li>
-              <li className="cursor-pointer font-medium hover:text-yellow" onClick={() => aboutRef.current.scrollIntoView({ behavior: 'smooth'})}>About</li>
-              <li className="cursor-pointer font-medium hover:text-yellow" onClick={() => skillsRef.current.scrollIntoView({ behavior: 'smooth'})}>Skills</li>
-              <li className="cursor-pointer font-medium hover:text-yellow" onClick={() => projectRef.current.scrollIntoView({ behavior: 'smooth'})}>Projects</li>
-              <li className="cursor-pointer font-medium hover:text-yellow" onClick={() => contactRef.current.scrollIntoView({ behavior: 'smooth'})}>Contact</li>
-            </ul>
+      <nav className="w-full border-b bg-black z-[999] fixed ">
+        <div className="relative">
+          <div className="w-11/12 mx-auto py-2 sm:py-4 flex justify-between items-center ">
+            <p className="font-bold text-lg text-light_blue cursor-pointer" onClick={() => homeRef.current.scrollIntoView({ behavior: 'smooth'})}>FA</p>
+            <div className=" md:flex flex-col md:flex-row items-center md:gap-4 bg-black">
+              <ul ref={navLinks} className={openNav ? "absolute md:relative w-screen pb-8 top-[65px] pt-8 md:pt-0 md:pb-0 bg-black left-0 flex flex-col md:flex-row items-center gap-6 md:gap-4 -z-[1000] overflow-hidden transition-all ease-in box-border opacity-100 open" : "absolute md:relative opacity-0 w-screen pb-10 top-10 pt-8 md:pt-0 md:pb-0 bg-black left-0 flex flex-col md:flex-row items-center gap-6 md:gap-4 -z-10 h-0 box-border overflow-hidden whitespace-nowrap transition-all ease-in" }>
+                <li className="cursor-pointer font-medium hover:text-yellow overflow-hidden" onClick={() => {homeRef.current.scrollIntoView({ behavior: 'smooth'}); setOpenNav(!openNav)}}>Home</li>
+                <li className="cursor-pointer font-medium hover:text-yellow overflow-hidden" onClick={() => {aboutRef.current.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', offsetTop: 100}); setOpenNav(!openNav)}}>About</li>
+                <li className="cursor-pointer font-medium hover:text-yellow overflow-hidden" onClick={() => {skillsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', offsetTop: 100}); setOpenNav(!openNav)}}>Skills</li>
+                <li className="cursor-pointer font-medium hover:text-yellow overflow-hidden" onClick={() => {projectRef.current.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', offsetTop: 100}); setOpenNav(!openNav)}}>Projects</li>
+                <li className="cursor-pointer font-medium hover:text-yellow overflow-hidden" onClick={() => {contactRef.current.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', offsetTop: 100}); setOpenNav(!openNav)}}>Contact</li>
+              </ul>
+              <div className="block md:hidden">   
+                <Hamburger toggled={openNav} toggle={setOpenNav} size={26} color="#ffa02a" />
+              </div>
+            </div>
           </div>
         </div>
       </nav>
