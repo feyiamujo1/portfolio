@@ -1,7 +1,8 @@
 
 import { Link } from "react-router-dom";
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Hamburger from 'hamburger-react'
+import ReactLoading from 'react-loading'
 
 import SmallerProfileImage from "../src/assests/images/small_profile.jpg"
 
@@ -14,6 +15,27 @@ function App() {
   const navLinks = useRef(null);
 
   const [openNav, setOpenNav] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const [joke, setJoke] = useState({});
+
+  const getJoke = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch('https://backend-omega-seven.vercel.app/api/getjoke');
+      const data = await response.json();
+      setJoke(data[0]);
+      console.log(data[0]);
+      setIsLoading(false);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    getJoke();
+  }, [])
+  
 
   return (
     <div className="font-raleway bg-black text-white">
@@ -22,7 +44,7 @@ function App() {
           <div className="w-11/12 mx-auto py-2 sm:py-4 flex justify-between items-center ">
             <p className="font-bold text-lg text-light_blue cursor-pointer" onClick={() => homeRef.current.scrollIntoView({ behavior: 'smooth'})}>FA</p>
             <div className=" md:flex flex-col md:flex-row items-center md:gap-4 bg-black">
-              <ul ref={navLinks} className={openNav ? "absolute md:relative w-screen pb-8 top-[65px] pt-8 md:pt-0 md:pb-0 bg-black left-0 flex flex-col md:flex-row items-center gap-6 md:gap-4 -z-[1000] overflow-hidden transition-all ease-in box-border opacity-100 open" : "absolute md:relative opacity-0 w-screen pb-10 top-10 pt-8 md:pt-0 md:pb-0 bg-black left-0 flex flex-col md:flex-row items-center gap-6 md:gap-4 -z-10 h-0 box-border overflow-hidden whitespace-nowrap transition-all ease-in" }>
+              <ul ref={navLinks} className={openNav ? "absolute md:relative md:opacity-100 w-screen pb-8 top-[65px] sm:top-[81px] pt-8 md:pt-0 md:pb-0 bg-black left-0  flex flex-col md:flex-row items-center gap-6 md:gap-4 -z-[1000] md:z-20 overflow-hidden transition-all ease-in box-border opacity-100 open md:py-0 md:top-0 md:h-fit md:w-fit" : "absolute md:relative opacity-0 md:opacity-100 w-screen pb-10 top-10 pt-8 md:pt-0 md:pb-0 bg-black left-0 flex flex-col md:flex-row items-center gap-6 md:gap-4 -z-10 md:z-20 h-0 box-border overflow-hidden whitespace-nowrap transition-all ease-in md:py-0 md:top-0 md:h-fit md:w-fit" }>
                 <li className="cursor-pointer font-medium hover:text-yellow overflow-hidden" onClick={() => {homeRef.current.scrollIntoView({ behavior: 'smooth'}); setOpenNav(!openNav)}}>Home</li>
                 <li className="cursor-pointer font-medium hover:text-yellow overflow-hidden" onClick={() => {aboutRef.current.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', offsetTop: 100}); setOpenNav(!openNav)}}>About</li>
                 <li className="cursor-pointer font-medium hover:text-yellow overflow-hidden" onClick={() => {skillsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', offsetTop: 100}); setOpenNav(!openNav)}}>Skills</li>
@@ -71,7 +93,7 @@ function App() {
             <img src={ SmallerProfileImage } alt="" className="w-full md:float-right md:w-[450px] md:h-[400px] object-fill md:mb-4 md:ml-10 " />
             <div className="space-y-3 w-full">
               <p className="text-base md:text-lg">
-                My name is Feyisayo, a frontend web developer based in Nigeria. I studied at Redeemers University, where I completed my Bachelors Degree in Computer Science.
+                My name is Feyisayo, a frontend web developer based in Nigeria. I studied at Redeemers University, where I completed my Bachelor's Degree in Computer Science.
               </p>
               <p className="text-base md:text-lg">
                 My passion for technology began during my formative years, and it ultimately led me to pursue a career in software development. I started my journey by learning the 
@@ -81,7 +103,7 @@ function App() {
               </p>
               <p className="text-base md:text-lg">
                 With my expertise in HTML, CSS, JavaScript, and other web technologies, I'm dedicated to delivering top-notch solutions that meet the unique needs of each project. 
-                From simple landing pages to complex web applications, I approach each project with a strong attention to detail and a commitment to excellence. While I take pride 
+                From simple landing pages to complex web applications, I approach each project with strong attention to detail and a commitment to excellence. While I take pride 
                 in my frontend web development skills, I'm also eager to continue expanding my knowledge and skills to become a full-stack developer.
               </p>
               <p className="text-base md:text-lg">
@@ -137,7 +159,7 @@ function App() {
             <div className="flex flex-col gap-4 bg-[#181b2e] rounded-lg shadow-md py-6 justify-between min-h-[370px]">
               <div className="mx-auto space-y-2.5 ">
                 <h3 className="text-xl font-semibold px-6">OAU CV Builder</h3>
-                <hr className="border-[#70611c] "></hr>
+                <hr className="border-[#000000] "></hr>
                 <div className="flex gap-3 px-6 pt-1">
                   <p className="bg-[#464958] text-sm py-2 px-3 rounded-md">ReactJS</p> 
                   <p className="bg-[#464958] text-sm py-2 px-3 rounded-md">Talwind CSS</p>
@@ -168,7 +190,7 @@ function App() {
             <div className="flex flex-col gap-4 bg-[#181b2e] rounded-lg py-6 justify-between min-h-[370px]">
               <div className="mx-auto space-y-2.5 ">
                 <h3 className="text-xl font-semibold px-6">Eyekontact (Ongoing)</h3>
-                <hr className="border-[#70611c] "></hr>
+                <hr className="border-[#000000] "></hr>
                 <div className="flex gap-3 px-6 pt-1">
                   <p className="bg-[#464958] text-sm py-2 px-3 rounded-md">ReactJS</p> 
                   <p className="bg-[#464958] text-sm py-2 px-3 rounded-md">Talwind CSS</p>
@@ -200,7 +222,7 @@ function App() {
             <div className="flex flex-col gap-4 bg-[#181b2e] rounded-lg py-6 justify-between min-h-[370px]">
               <div className="mx-auto space-y-2.5 ">
                 <h3 className="text-xl font-semibold px-6">KuroComm</h3>
-                <hr className="border-[#70611c] "></hr>
+                <hr className="border-[#000000] "></hr>
                 <div className="flex gap-3 px-6 pt-1">
                   <p className="bg-[#464958] text-sm py-2 px-3 rounded-md">HTML</p> 
                   <p className="bg-[#464958] text-sm py-2 px-3 rounded-md">CSS</p>
@@ -233,7 +255,7 @@ function App() {
             <div className="flex flex-col gap-4 bg-[#181b2e] rounded-lg py-6 justify-between min-h-[370px]">
               <div className="mx-auto space-y-2.5 ">
                 <h3 className="text-xl font-semibold px-6">Hypestrike (Ongoing)</h3>
-                <hr className="border-[#70611c] "></hr>
+                <hr className="border-[#000000] "></hr>
                 <div className="flex gap-3 px-6 pt-1">
                   <p className="bg-[#464958] text-sm py-2 px-3 rounded-md">ReactJS</p> 
                   <p className="bg-[#464958] text-sm py-2 px-3 rounded-md">Talwind CSS</p>
@@ -272,7 +294,7 @@ function App() {
             <div className="flex flex-col gap-4 bg-[#181b2e] rounded-lg py-6 justify-between min-h-[370px]">
               <div className="mx-auto space-y-2.5 ">
                 <h3 className="text-xl font-semibold px-6">Learning Management System</h3>
-                <hr className="border-[#70611c] "></hr>
+                <hr className="border-[#000000] "></hr>
                 <div className="flex gap-3 px-6 pt-1">
                   <p className="bg-[#464958] text-sm py-2 px-3 rounded-md">ReactJS</p> 
                   <p className="bg-[#464958] text-sm py-2 px-3 rounded-md">Talwind CSS</p>
@@ -296,7 +318,7 @@ function App() {
             <div className="flex flex-col gap-4 bg-[#181b2e] rounded-lg py-6 justify-between min-h-[370px]">
               <div className="mx-auto space-y-2.5 ">
                 <h3 className="text-xl font-semibold px-6">Cho’s Restaurant</h3>
-                <hr className="border-[#70611c] "></hr>
+                <hr className="border-[#000000] "></hr>
                 <div className="flex gap-3 px-6 pt-1">
                   <p className="bg-[#464958] text-sm py-2 px-3 rounded-md">ReactJs</p> 
                   <p className="bg-[#464958] text-sm py-2 px-3 rounded-md">CSS</p>
@@ -325,7 +347,7 @@ function App() {
             <div className="flex flex-col gap-4 bg-[#181b2e] rounded-lg py-6 justify-between min-h-[370px]">
               <div className="mx-auto space-y-2.5 ">
                 <h3 className="text-xl font-semibold px-6">76gems</h3>
-                <hr className="border-[#70611c] "></hr>
+                <hr className="border-[#000000] "></hr>
                 <div className="flex gap-3 px-6 pt-1">
                   <p className="bg-[#464958] text-sm py-2 px-3 rounded-md">ReactJS</p> 
                   <p className="bg-[#464958] text-sm py-2 px-3 rounded-md">CSS</p>
@@ -362,6 +384,35 @@ function App() {
             <p>
               I'm currently available to get involved in new projects, so get in touch if you'd like to work together.
               Email me at <Link to="mailto:feyisayoamujoyegbe@gmail.com" className="font-bold text-yellow underline decoration-light_blue hover:text-light_blue transition-all duration-300">feyisayoamujoyegbe@gmail.com</Link> and let's talk about your project!
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="py-8 sm:py-10 md:py-12 border-b">
+        <div className="w-11/12 mx-auto space-y-9">
+          <h3 className="text-2xl md:text-3xl font-semibold relative after:absolute after:w-10 after:h-1 after:bg-yellow after:-bottom-3 after:left-0">Jokes 😁</h3>
+          <div className="space-y-3">
+            <p className="w-fit text-base md:text-lg">
+              The Dev Joke API was used for this project because it provides a simple and easy-to-use interface for fetching random developer jokes. 
+              As a developer myself, I found the jokes to be entertaining and relatable, making it a great fit for my project. 
+              Additionally, the API's response format was straightforward and easy to parse, which saved me time and effort in implementing it into my project. 
+              Overall, the Dev Joke API was a great choice for my project due to its simplicity, relevancy, and ease of use.
+            </p>
+            <p className="w-fit text-base md:text-lg">
+              Thank you for checking out my portfolio, I hope the jokes brighten up your day.
+            </p>
+            <div className="text-base md:text-lg h-36 md:h-32 md:min-h-36 py-4 md:py-6 w-full flex flex-col justify-center">
+              {
+                joke && !isLoading ? (
+                  <div className="w-full">
+                    <p><span className="text-yellow">Question:</span> {joke.question}</p>
+                    <p><span className="text-yellow">Punch line:</span> {joke.punchline}</p> 
+                  </div>
+                ) : <ReactLoading type="spin" color="#ffa02a" />
+              }
+            </div>
+            <p onClick={getJoke} className="px-4 py-2.5 rounded-full w-fit font-semibold text-base md:text-lg cursor-pointer bg-yellow hover:bg-light_blue transition-all duration-300">
+              Next Joke
             </p>
           </div>
         </div>
