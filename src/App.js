@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from 'react';
 import Hamburger from 'hamburger-react'
 import ReactLoading from 'react-loading'
-import FeyiAmujoResumePdf from "../src/assests/documents/FeyiAmujoCV.pdf"
 
 import SmallerProfileImage from "../src/assests/images/small_profile.jpg"
 
@@ -39,7 +38,7 @@ function App() {
   
 
   return (
-    <div className="font-raleway bg-black text-white">
+    <div className="font-raleway bg-black text-white scroll-smooth">
       <nav className="w-full border-b bg-black z-[999] fixed ">
         <div className="relative">
           <div className="w-11/12 mx-auto py-2 sm:py-4 flex justify-between items-center ">
@@ -52,7 +51,6 @@ function App() {
                 <li className="cursor-pointer font-medium hover:text-yellow overflow-hidden" onClick={() => {projectRef.current.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', offsetTop: 100}); setOpenNav(!openNav)}}>Projects</li>
                 <li className="cursor-pointer font-medium hover:text-yellow overflow-hidden" onClick={() => {contactRef.current.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', offsetTop: 100}); setOpenNav(!openNav)}}>Contact</li>
               </ul>
-              <a className=" w-fit" href={FeyiAmujoResumePdf} download="Feyi-Amujo-cv.pdf"><p className="font-medium px-4 py-2.5 overflow-hidden rounded-full bg-yellow  hover:bg-light_blue">Resume</p></a>
               <div className="block md:hidden">   
                 <Hamburger toggled={openNav} toggle={setOpenNav} size={26} color="#ffa02a" />
               </div>
