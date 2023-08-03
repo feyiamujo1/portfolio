@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from 'react';
 import Hamburger from 'hamburger-react'
 import ReactLoading from 'react-loading'
+import FeyiAmujoResumePdf from "../src/assests/documents/FeyiAmujoCV.pdf"
 
 import SmallerProfileImage from "../src/assests/images/small_profile.jpg"
 
@@ -51,6 +52,7 @@ function App() {
                 <li className="cursor-pointer font-medium hover:text-yellow overflow-hidden" onClick={() => {projectRef.current.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', offsetTop: 100}); setOpenNav(!openNav)}}>Projects</li>
                 <li className="cursor-pointer font-medium hover:text-yellow overflow-hidden" onClick={() => {contactRef.current.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', offsetTop: 100}); setOpenNav(!openNav)}}>Contact</li>
               </ul>
+              <a className=" w-fit" href={FeyiAmujoResumePdf} download="Feyi-Amujo-cv.pdf"><p className="font-medium px-4 py-2.5 overflow-hidden rounded-full bg-yellow  hover:bg-light_blue">Resume</p></a>
               <div className="block md:hidden">   
                 <Hamburger toggled={openNav} toggle={setOpenNav} size={26} color="#ffa02a" />
               </div>
@@ -221,7 +223,7 @@ function App() {
             </div>
             <div className="flex flex-col gap-4 bg-[#181b2e] rounded-lg py-6 justify-between min-h-[370px]">
               <div className="mx-auto space-y-2.5 ">
-                <h3 className="text-xl font-semibold px-6">Eyekontact (Ongoing)</h3>
+                <h3 className="text-xl font-semibold px-6">Eyekontact</h3>
                 <hr className="border-[#000000] "></hr>
                 <div className="flex gap-3 px-6 pt-1">
                   <p className="bg-[#464958] text-sm py-2 px-3 rounded-md">ReactJS</p> 
