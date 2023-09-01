@@ -918,7 +918,7 @@ function App() {
           </h3>
           <div className="space-y-3">
             <p className="w-fit text-base md:text-lg">
-              As a developer, I understand the immersive nature of our work, and I'm sure you can relate. That's why I decided to incorporate some Dev jokes, sourced through the Dev Joke API. These jokes not only entertained but also adds a relatable touch, making it a perfect fit. 😎😉
+              As a developer, I understand the immersive nature of our work, and I'm sure you can relate. That's why I decided to incorporate some Dev jokes, sourced through the Dev Joke API. These jokes are not only entertaining but also adds a relatable touch, making it a perfect fit. 😎😉
             </p>
             <p className="w-fit text-base md:text-lg">
               Thank you for checking out my portfolio, I hope the jokes brighten
