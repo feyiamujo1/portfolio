@@ -149,12 +149,9 @@ function App() {
             <p className="text-base md:text-lg">
               I specialize in creating responsive and user-friendly web
               solutions that make a high impact using{" "}
-              <Link
-                to="https://react.dev/"
-                target="_blank"
-                className="font-bold underline text-yellow decoration-light_blue active:text-light_blue md:hover:text-light_blue transition-all duration-300">
-                React
-              </Link>
+              <strong className="font-bold underline text-yellow decoration-light_blue active:text-light_blue md:hover:text-light_blue transition-all duration-300">
+                ReactJs, NextJS and TypeScript
+              </strong>
               . I'm passionate about bringing ideas to life and solving problems
               through innovative design and development.
             </p>
@@ -167,6 +164,11 @@ function App() {
             </p>
             {/* <p className="absolute text-4xl botton-0 right-20 brightness-50 animate-spin">🔆</p> */}
           </div>
+          {/* <img
+            src={SmallerProfileImage}
+            alt=""
+            className="w-full rounded-full overflow-hidden md:w-[300px] object-contain md:mb-4 md:ml-10 "
+          /> */}
         </div>
         <div ref={aboutRef}></div>
       </section>
@@ -179,37 +181,33 @@ function App() {
             <img
               src={SmallerProfileImage}
               alt=""
-              className="w-full md:float-right md:w-[450px] md:h-[400px] object-fill md:mb-4 md:ml-10 "
+              className="w-full md:float-right md:w-[300px] md:h-[250px] object-fill md:mb-4 md:ml-10 "
             />
             <div className="space-y-3 w-full">
               <p className="text-base md:text-lg">
                 My name is Feyisayo, a frontend web developer based in Nigeria.
                 I studied at Redeemers University, where I completed my
-                Bachelor's Degree in Computer Science.
-              </p>
-              <p className="text-base md:text-lg">
-                My passion for technology began during my formative years, and
-                it ultimately led me to pursue a career in software development.
-                I started my journey by learning the fundamentals of Python and
-                Java and utilizing them in a variety of contexts, including web
-                scraping and Android app development. However, as I delved
-                deeper into the field, I discovered my true calling in web
-                development. Today, as a frontend web developer, I find great
-                joy in crafting intuitive and visually stunning interfaces that
-                engage users and drive results.
-              </p>
-              <p className="text-base md:text-lg">
-                With my expertise in HTML, CSS, JavaScript, and other web
-                technologies, I'm dedicated to delivering top-notch solutions
-                that meet the unique needs of each project. From simple landing
-                pages to complex web applications, I approach each project with
-                strong attention to detail and a commitment to excellence. While
-                I take pride in my frontend web development skills, I'm also
-                eager to continue expanding my knowledge and skills to become a
-                full-stack developer.
-              </p>
-              <p className="text-base md:text-lg">
-                Overall, my journey in tech has been both rewarding and
+                Bachelor's Degree in Computer Science. My fascination with
+                technology began in my formative years, ultimately steering me
+                toward a career in software development. Currently, I work as a
+                freelance frontend web developer, deriving immense satisfaction
+                from creating intuitive and visually appealing interfaces that
+                captivate users and yield tangible results.
+                {/* </p>
+              <p className="text-base md:text-lg"> */}
+                Armed with expertise in ReactJS, NextJS, Tailwind CSS, and
+                various other web technologies, my commitment lies in delivering
+                top-tier solutions tailored to each project's unique
+                requirements. Whether it's a straightforward landing page or a
+                complex web application, I approach every endeavor with
+                meticulous attention to detail and an unwavering commitment to
+                excellence.
+                {/* </p>
+              <p className="text-base md:text-lg"> */}
+                While I take pride in my proficiency in frontend web
+                development, I am equally enthusiastic about expanding my
+                knowledge and skills to transition into a full-stack developer
+                role. Overall, my journey in tech has been both rewarding and
                 challenging, and I'm excited to continue growing and developing
                 my skills in the years to come.
               </p>
