@@ -1058,14 +1058,17 @@ function App() {
                   </p>
                 </div>
               ) : (
-                <ReactLoading type="spin" color="#ffa02a" />
+                <div className="flex items-center gap-3">
+                  <ReactLoading type="spin" color="#ffa02a" /> <p className="opacity-40">Please wait...</p>
+                </div>
               )}
             </div>
-            <p
+            <button
+              disabled={!joke || isLoading}
               onClick={getJoke}
-              className="px-4 py-2.5 rounded-full w-fit font-semibold text-base md:text-lg cursor-pointer bg-yellow active:bg-light_blue md:hover:bg-light_blue transition-all duration-300">
+              className="px-4 py-2.5 rounded-full w-fit font-semibold text-base md:text-lg cursor-pointer bg-yellow active:bg-light_blue md:hover:bg-light_blue transition-all duration-300 disabled:pointer-events-none disabled:opacity-40 disabled:bg-yellow">
               Next Joke
-            </p>
+            </button>
           </div>
         </div>
       </section>
