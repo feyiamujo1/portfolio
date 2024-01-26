@@ -763,7 +763,7 @@ function App() {
                 </Link>
               </div>
             </div>
-            <div className="flex flex-col gap-4 bg-[#181b2e] rounded-lg py-6 justify-between min-h-[370px]">
+            {/* <div className="flex flex-col gap-4 bg-[#181b2e] rounded-lg py-6 justify-between min-h-[370px]">
               <div className="mx-auto space-y-2.5 ">
                 <h3 className="text-xl font-semibold px-6">
                   Hypestrike (Ongoing)
@@ -786,7 +786,6 @@ function App() {
               </div>
               <div className="flex gap-4 px-6">
                 {" "}
-                {/* justify-between */}
                 <Link
                   to="https://hypestrike.netlify.app/"
                   target="_blank"
@@ -826,7 +825,7 @@ function App() {
                   Github
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <p>
